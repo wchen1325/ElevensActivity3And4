@@ -54,13 +54,17 @@ public class Shuffler {
         int[] temp = new int[values.length];
         int index = 0;
         for(int i = 0; i < (values.length +1)/2 ; i++){
-            values[index]= temp[i];
+            temp[index]= values[i];
             index= index+2;
         }
         index = 1;
-        for(int i = (values.length+1/2); i < values.length; i++){
-            values[index]=temp[i];
+        for(int i = (values.length+1)/2; i < values.length; i++){
+            temp[index]=values[i];
             index = index +2;
+        }
+
+        for(int i = 0; i < values.length; i++){
+            values[i] = temp[i];
         }
     }
 
@@ -77,6 +81,13 @@ public class Shuffler {
      */
     public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        for(int i = values.length - 1; i > 1; i-- ){
+            int r = (int)((i+1) * Math.random());
+            int temp = values[i];
+            values[i] = values[r];
+            values[r] = temp;
+        }
+
 
     }
 }
