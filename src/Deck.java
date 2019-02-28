@@ -65,6 +65,9 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
         //perfect shuffle
         List<Card> cardsTemp = new ArrayList<Card>();
+        for(int i =0; i<size();i++){
+            cardsTemp.add(cards.get(i));
+        }
         int index = 0;
         for(int i =0; i<(size() +1)/2;i++){
             cardsTemp.set(index,cards.get(i));
